@@ -1,0 +1,75 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/img/oauth2.png" type="image/png">
+
+    <title>FIUBA PoC Web Server</title>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="./css/sticky.css" rel="stylesheet">
+    <style>
+      pre {
+        color: #e83e8c;
+        word-break: break-word;
+        background: #eee;
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/">PoC Web Server</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Public</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/protected">Protected <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+              <% if (locals.user) { %>
+                <a class="nav-link" href="/logout">Sign out</a>
+              <% } else { %>
+                <a class="nav-link" href="/login/poc-oauth">Sign in</a>
+              <% } %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5">PoC Web Server - Contenido protegido</h1>
+      <p class="lead">En esta sección se visualizan los atributos obtenidos de haber solicitado un access token al Authorization Server para leer los atributos de usuario: <code>['id', 'email', 'firstname', 'lastname']</code>.</p>
+      <p class="lead">Cabe notar que el <code>username</code> es también un atributo valido del usuario, pero como no lo solicitamos en nuestro pedido, no nos ha sido devuelto.</p>
+      <h2>User Profile</h2>
+      <pre><%= JSON.stringify(user, null, 2) %></pre>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">FIUBA PoC Web Server - Pagina de contenido protegido.</span>
+      </div>
+    </footer>
+</body>
+</html>

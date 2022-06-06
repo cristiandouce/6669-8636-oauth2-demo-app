@@ -1,0 +1,18 @@
+[
+  {
+    "name": "PoC AuthZ Application",
+    "clientId": "22ae08768f4ecf3d1c8b898b9b0784c0fd952c1a",
+    "clientSecret": "ef31567226a2ec48898720bb726b4ad8c0c1a62bf6993e1c7b6496164c511faa306627a858da9f2ae1251d242242b395ea369eddf577fb6235bbb035c2723e0c9744d7fe22b1fcf522ed981a7b9d1829",
+    "grants": ["authorization_code"],
+    "redirectUris": ["http://localhost:3000/login/callback", "http://localhost:3001/login/callback", "https://fiuba-cripto-6669-8636-web.herokuapp.com/login/callback"],
+    "logoutUris": ["http://localhost:3000/", "http://localhost:3001/", "https://fiuba-cripto-6669-8636-web.herokuapp.com/"]
+  },
+  {
+    "name": "PoC Client Credentials",
+    "clientId": "8293d73ee07f63bcd89ad1fe15d9b24cac9fee2c",
+    "clientSecret": "eaf167b322bbd3daa5ef485820815ad92a8ea0673d38c905de22a4a7fe21dcd7f063fe3ca348c43b1e9a85e18cc9b417fdfd47970ac07e806d34ed8557eeacfe6f4aa1b617317804212e85fb37a69f78",
+    "grants": ["client_credentials"],
+    "redirectUris": ["http://localhost:3000/login/callback", "http://localhost:3001/login/callback", "https://fiuba-cripto-6669-8636-web.herokuapp.com/login/callback"],
+    "logoutUris": ["http://localhost:3000/", "http://localhost:3001/", "https://fiuba-cripto-6669-8636-web.herokuapp.com/"]
+  }
+]

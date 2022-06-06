@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/oauth2.png" type="image/png">
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style>
+    body{font-family:Lato,sans-serif}.main-head{height:150px;background:#fff}.main{padding:0 10px}.sidenav{height:100%;background-color:#000;overflow-x:hidden;padding-top:20px}.login-main-text{margin-top:20%;padding:60px;color:#fff}.login-main-text h2{font-weight:300}.btn-black{background-color:#000!important;color:#fff}@media screen and (max-height:450px){.sidenav{padding-top:15px}}@media screen and (max-width:680px){.sidenav{height:200px}.login-main-text{margin-top:20px}.login-form{margin-top:10%}.register-form{margin-top:10%}}@media screen and (min-width:680px){.main{padding-top:15px;margin-left:40%}.sidenav{width:40%;position:fixed;z-index:1;top:0;left:0}.login-form{margin-top:30%;padding:60px 0}.register-form{margin-top:20%}}
+    pre {
+      color: #e83e8c;
+      word-break: break-word;
+      background: #dedede;
+      padding: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="sidenav">
+  <div class="login-main-text">
+    <h2>Login Page</h2>
+    <p>El login aquí se hace en el servidor autorizador, para luego continuar con el pedido de autorización que inició el cliente web:.</p>
+    <pre><%= JSON.stringify(state, null, 2) %></pre>
+  </div>
+</div>
+<div class="main">
+  <div class="col-md-6 col-sm-12">
+    <div class="login-form">
+      <form action="/login?state=<%= state.state %>" method="post">
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" name="username" class="form-control" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="password" class="form-control" placeholder="Password">
+        </div>
+        <% if (flash.error) { %>
+        <div class="alert alert-danger" role="alert">
+          <%= flash.error.join(', ') %>
+        </div>
+        <% } %>
+
+        <button type="submit" class="btn btn-black">Login</button>
+        <!-- <button type="submit" class="btn btn-secondary">Register</button> -->
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

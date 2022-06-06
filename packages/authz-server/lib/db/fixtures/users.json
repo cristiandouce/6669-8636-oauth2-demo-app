@@ -1,0 +1,44 @@
+[
+  {
+    "email": "hpagola@fi.uba.ar",
+    "firstname": "Hugo",
+    "lastname": "Pagola",
+    "username": "hpagola",
+    "password": "crypto-rocks"
+  },
+  {
+    "email": "vallejosj@gmail.com",
+    "firstname": "Javier",
+    "lastname": "Vallejos",
+    "username": "jvallejos",
+    "password": "wargames"
+  },
+  {
+    "email": "csimonelli@fi.uba.ar",
+    "firstname": "Cristian",
+    "lastname": "Simonelli",
+    "username": "csimonelli",
+    "password": "rickymorty"
+  },
+  {
+    "email": "cguantay@fi.uba.ar",
+    "firstname": "Christian",
+    "lastname": "Guantay",
+    "username": "cguantay",
+    "password": "javascript-rocks"
+  },
+  {
+    "email": "mferrero@fi.uba.ar",
+    "firstname": "Manuel",
+    "lastname": "Ferrero",
+    "username": "mferrero",
+    "password": "key-breaker"
+  },
+  {
+    "email": "cdoucesuarez@fi.uba.ar",
+    "firstname": "Cristian",
+    "lastname": "Douce",
+    "username": "cdoucesuarez",
+    "password": "talking-to-me"
+  }
+]
